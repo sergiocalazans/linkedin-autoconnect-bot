@@ -1,35 +1,8 @@
 import pyautogui
 from time import sleep
 
-pyautogui.PAUSE = 0.5
-contador = 0  # Inicializar o contador de cliques
-convites = 60  # Definir o número de convites a serem enviados
-interrupido = False  # Indicar se o processo foi interrompido
-
-# Abrir navegador
-pyautogui.press("win")
-pyautogui.write("chrome")
-pyautogui.press("enter")
-
-sleep(4)  # Aguardar 4 segundos para o navegador abrir
-
-# Escrever o endereço do site
-pyautogui.hotkey("ctrl", "l")
-pyautogui.write("https://www.linkedin.com/mynetwork/grow/")
-
-sleep(2)  # Aguardar 2 segundos para o endereço ser digitado
-
-pyautogui.press("enter")  # Pressionar Enter para acessar o site
-
-sleep(5)  # Aguardar 5 segundos para o site carregar
-
-# Obter posição do Scroll da tela
-pyautogui.click(x=1358, y=160)  # Clicar na posição do Scroll para garantir que ele esteja ativo
-pyautogui.scroll(-500)  # Scroll para baixo para garantir que o botão "Conectar" esteja visível
-
-
-def enviar_convites():
-    global contador, interrupido
+def enviar_convites(contador, convites, interrupido):
+    
     # Loop para clicar no botão "Conectar" 10 vezes
     while contador < convites:
         pyautogui.scroll(-100)  # Scroll para baixo para garantir que o botão "Conectar" esteja visível
@@ -64,10 +37,39 @@ def enviar_convites():
 
     print("Processo finalizado.")
 
-if interrupido:
-    print("O processo foi interrompido devido a um erro ou botão não encontrado.")
-else:
-    print("Todos os convites foram enviados com sucesso!")
-    pyautogui.hotkey("alt", "f4")
+def main():
+  pyautogui.PAUSE = 0.5
+  contador = 0  # Inicializar o contador de cliques
+  convites = 60  # Definir o número de convites a serem enviados
+  interrupido = False  # Indicar se o processo foi interrompido
 
-print("Processo finalizado.")
+  # Abrir navegador
+  pyautogui.press("win")
+  pyautogui.write("chrome")
+  pyautogui.press("enter")
+
+  sleep(4)  # Aguardar 4 segundos para o navegador abrir
+
+  # Escrever o endereço do site
+  pyautogui.hotkey("ctrl", "l")
+  pyautogui.write("https://www.linkedin.com/mynetwork/grow/")
+
+  sleep(2)  # Aguardar 2 segundos para o endereço ser digitado
+
+  pyautogui.press("enter")  # Pressionar Enter para acessar o site
+
+  sleep(5)  # Aguardar 5 segundos para o site carregar
+
+  # Obter posição do Scroll da tela
+  pyautogui.click(x=1358, y=160)  # Clicar na posição do Scroll para garantir que ele esteja ativo
+  pyautogui.scroll(-500)  # Scroll para baixo para garantir que o botão "Conectar" esteja visível
+
+  enviar_convites(contador, convites, interrupido)
+
+  if interrupido:
+      print("O processo foi interrompido devido a um erro ou botão não encontrado.")
+  else:
+      print("Todos os convites foram enviados com sucesso!")
+      pyautogui.hotkey("alt", "f4")
+
+  print("Processo finalizado.")
