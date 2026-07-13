@@ -293,3 +293,7 @@ Verifique se o Chrome está instalado e acessível pelo menu Iniciar.
 Este projeto é disponibilizado exclusivamente para fins educacionais e de estudo sobre automação de interfaces gráficas utilizando Python.
 
 O autor não incentiva nem se responsabiliza pelo uso deste código em desacordo com os Termos de Serviço de plataformas de terceiros.
+
+---
+
+Desenvolvido por: [Sérgio Calazans](https://github.com/sergiocalazans)
