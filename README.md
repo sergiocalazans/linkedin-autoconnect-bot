@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# LinkedIn Auto Connect Bot
-=======
 # 🤖 LinkedIn Auto Connect Bot
 
 Automação desenvolvida em **Python** utilizando **PyAutoGUI** para localizar o botão **"Conectar"** na tela e realizar interações automáticas por meio de reconhecimento de imagem.
@@ -296,4 +293,8 @@ Verifique se o Chrome está instalado e acessível pelo menu Iniciar.
 Este projeto é disponibilizado exclusivamente para fins educacionais e de estudo sobre automação de interfaces gráficas utilizando Python.
 
 O autor não incentiva nem se responsabiliza pelo uso deste código em desacordo com os Termos de Serviço de plataformas de terceiros.
->>>>>>> develop
+
+---
+
+Desenvolvido por: [Sérgio Calazans](https://github.com/sergiocalazans)
+
