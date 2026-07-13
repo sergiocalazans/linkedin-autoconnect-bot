@@ -1,0 +1,5 @@
+PyAutoGUI>=0.9.54
+opencv-python>=4.10.0
+Pillow>=11.0.0
+PyScreeze>=1.0.1
+MouseInfo>=0.1.3
