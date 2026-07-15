@@ -2,14 +2,14 @@ import pyautogui
 from time import sleep
 
 pyautogui.PAUSE = 0.5
-interrupido = False  # Indicar se o processo foi interrompido
+interrompido = False  # Variável global para indicar se o processo foi interrompido
 
 def fechar_janela():
     # Fechar a janela, caso esteja aberta
     pyautogui.hotkey("alt", "f4")
     print("Janela fechada.")
 
-def enviar_convites(contador, convites, interrupido):
+def enviar_convites(contador, convites, interrompido):
     
     # Loop para clicar no botão "Conectar" 10 vezes
     while contador < convites:
@@ -31,13 +31,13 @@ def enviar_convites(contador, convites, interrupido):
                 print("Botão 'Conectar' não encontrado na tela.")
                 # Fechar a janela, caso esteja aberta
                 fechar_janela()
-                interrupido = True
+                interrompido = True
                 break
         except Exception as e:
             print(f"Ocorreu um erro ao localizar o botão: {e}")
             break
 
-    if interrupido:
+    if interrompido:
         print("O processo foi interrompido devido a um erro ou botão não encontrado.")
     else:
         print("Todos os convites foram enviados com sucesso!")
@@ -76,11 +76,11 @@ def main():
   except Exception as e:
     print(f"Ocorreu um erro durante a execução do programa: {e}")
     fechar_janela()
-    interrupido = True
+    interrompido = True
     return None
 
   # Função do loop para enviar convites
-  enviar_convites(contador, convites, interrupido)
+  enviar_convites(contador, convites, interrompido)
 
   if contador == convites:
     print(f"\nTodos os convites foram enviados com sucesso!")
@@ -94,7 +94,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-    if interrupido:
+    if interrompido:
         print(f"\nO processo foi interrompido devido a um erro ou botão não encontrado.")
     else:
         print("\nProcesso finalizado.")
